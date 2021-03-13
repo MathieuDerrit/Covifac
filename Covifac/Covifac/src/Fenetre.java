@@ -1,5 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.*;
 
 
@@ -64,7 +67,7 @@ class Fenetre extends JFrame {
 	                Salle salleSimulateur = new Salle(g, Color.BLACK, "",0, 0, 20, 20, 500, 500);                
 	                
 	                //Couloir
-	                Salle salleCouloir = new Salle(g, Color.BLACK, "Couloir",250, 50, 220, 20, 100, 500); 
+	                Salle salleCouloir = new Salle(g, Color.BLACK, "Couloir",250, 15, 220, 20, 100, 500); 
 	                
 	                //Salle 1
 	                Salle salle1 = new Salle(g, Color.BLACK, "Salle 1",100, 50, 20, 20, 200, 500);
@@ -76,20 +79,44 @@ class Fenetre extends JFrame {
 	                Salle salle3 = new Salle(g, Color.BLACK, "Salle 3",400, 300, 320, 270, 200, 250);
 	                       
 	                //Portes du couloir
-	                Porte porteCouloirSortie = new Porte(g, Color.RED, 230, 20, 265, 20 );
+	                Porte porteCouloirSortie = new Porte(g, Color.YELLOW, 230, 20, 265, 20 );
 	                Porte porteCouloirEntree = new Porte(g, Color.GREEN,275, 20, 310, 20);
 	                
 	                //Portes salle en bas à droite (salle 3)
-	                Porte porteSalle3Sortie = new Porte(g, Color.RED, 320, 320, 320, 380 );
+	                Porte porteSalle3Sortie = new Porte(g, Color.YELLOW, 320, 320, 320, 380 );
 	                Porte porteSalle3Entree = new Porte(g, Color.GREEN, 320, 420, 320, 480);
 	                
 	                //Portes salle en haut à droite (salle 2)
-	                Porte porteSalle2Sortie = new Porte(g, Color.RED, 320, 60, 320, 120 );
+	                Porte porteSalle2Sortie = new Porte(g, Color.YELLOW, 320, 60, 320, 120 );
 	                Porte porteSalle2Entree = new Porte(g, Color.GREEN, 320, 160, 320, 220);
 	                
 	                //Portes salle à gauche  (salle 1)
-	                Porte porteSalle1Sortie = new Porte(g, Color.RED, 220, 160, 220, 220 );
+	                Porte porteSalle1Sortie = new Porte(g, Color.YELLOW, 220, 160, 220, 220 );
 	                Porte porteSalle1Entree = new Porte(g, Color.GREEN, 220, 320, 220, 380);
+	                
+	                //Capteurs du couloir
+	                //Nombre de personnes max possible du couloir
+	                int nbPersonnesMaxCouloir = 8;
+	                Capteur capteurCouloirSortie = new Capteur(g, Color.RED, nbPersonnesMaxCouloir, 230, 25, 35, 20);   
+	                Capteur capteurCouloirEntree = new Capteur(g, Color.RED, nbPersonnesMaxCouloir, 275, 25, 35, 20);
+	                
+	                //Capteurs salle en bas à droite (salle 3)
+	                //Nombre de personnes max possible de la salle en bas à droite (salle 3)
+	                int nbPersonnesMaxSalle3 = 5;
+	                Capteur capteurSalle3Sortie = new Capteur(g, Color.RED, nbPersonnesMaxSalle3, 325, 320, 20, 60);
+	                Capteur capteurSalle3Entree = new Capteur(g, Color.RED, nbPersonnesMaxSalle3, 325, 420, 20, 60);   
+	                
+	                //Capteurs salle en haut à droite (salle 2)
+	                //Nombre de personnes max possible de la salle en haut à droite (salle 2)
+	                int nbPersonnesMaxSalle2 = 5;
+	                Capteur capteurSalle2Sortie = new Capteur(g, Color.RED, nbPersonnesMaxSalle2, 325, 60, 20, 60);
+	                Capteur capteurSalle2Entree = new Capteur(g, Color.RED, nbPersonnesMaxSalle2, 325, 160, 20, 60);
+	                
+	                //Capteurs salle à gauche  (salle 1)
+	                //Nombre de personnes max possible de la salle à gauche  (salle 1)
+	                int nbPersonnesMaxSalle1 = 10;
+	                Capteur capteurSalle1Sortie = new Capteur(g, Color.RED, nbPersonnesMaxSalle1, 195, 160, 20, 60);   
+	                Capteur capteurSalle1Entree = new Capteur(g, Color.RED, nbPersonnesMaxSalle1, 195, 320, 20, 60); 
 
 	            }
 			};
