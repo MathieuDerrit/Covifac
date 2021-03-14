@@ -2,24 +2,28 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Porte extends JPanel {
-	private Graphics g; 
-	private Color c; 
-	private int x1; 
-	private int y1; 
-	private int x2; 
-	private int y2;
+	
+	private Graphics g; //Le graphique de la porte
+	private Color c; 	//Couleur de la porte
+	private int x1; 	//Position x du premier point (pour dessiner la ligne) de la porte
+	private int y1; 	//Position y du premier point (pour dessiner la ligne) de la porte
+	private int x2; 	//Position x du deuxieme point (pour dessiner la ligne) de la porte
+	private int y2;		//Position y du deuxieme point (pour dessiner la ligne) de la porte
 	
 	public Porte(Graphics g, Color c, int x1, int y1, int x2, int y2) {
+		
 		this.g = g; 
 		this.c = c; 
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y1 = y1;
-		g.setColor(c);
-        g.drawLine(x1, y1, x2, y2);
+		
+		g.setColor(c);				//Couleur des dessins
+        g.drawLine(x1, y1, x2, y2);	//Dessine la ligne de la porte
 	}
-
+	
+	//GETTERS & SETTERS
 	public Graphics getG() {
 		return g;
 	}
@@ -66,11 +70,6 @@ public class Porte extends JPanel {
 
 	public void setY2(int y2) {
 		this.y2 = y2;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

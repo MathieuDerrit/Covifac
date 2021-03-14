@@ -4,17 +4,19 @@ import java.awt.*;
 
 public class Salle {
 	
-	private Graphics g;
-	private Color c;
-	private String nom;
-	private int xNom; 
-	private int yNom;
-	private int x1;
-	private int y1;
-	private int x2;
-	private int y2;
+	private Graphics g; //Le graphique de la salle
+	private Color c;	//Couleur de la salle
+	private String nom;	//Nom de la salle
+	private int xNom; 	//Position x du nom de la salle
+	private int yNom;	//Position y du nom de la salle
+	private int x1;		//Position x du premier point (pour dessiner le rectangle) de la salle
+	private int y1;		//Position y du premier point (pour dessiner le rectangle) de la salle
+	private int x2;		//Position x du deuxieme point (pour dessiner le rectangle) de la salle
+	private int y2;		//Position y du deuxieme point (pour dessiner le rectangle) de la salle
 	
+	//Constructeur
 	public Salle(Graphics g, Color c, String nom, int xNom, int yNom, int x1, int y1, int x2, int y2) {
+		
 		this.g = g; 
 		this.c = c; 
 		this.nom = nom; 
@@ -25,11 +27,12 @@ public class Salle {
 		this.x2 = x2;
 		this.y1 = y1;
 		
-		g.setColor(c);
-		g.drawString(nom, xNom, yNom);
-		g.drawRect(x1, y1, x2, y2);
+		g.setColor(c);					//Couleur des dessins
+		g.drawString(nom, xNom, yNom);	//Dessine le nom de la salle
+		g.drawRect(x1, y1, x2, y2);		//Dessine le contour de la salle
 	}
-
+	
+	//GETTERS & SETTERS
 	public Graphics getG() {
 		return g;
 	}
@@ -100,11 +103,6 @@ public class Salle {
 
 	public void setY2(int y2) {
 		this.y2 = y2;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
